@@ -1,0 +1,68 @@
+######################
+#    .zshrc file     #
+######################
+#export LANG=ja_JP.UTF-8
+export LANG=ja_JP.eucJP
+export EDITOR=vim
+export LISTMAX=0
+limit coredumpsize 0
+umask 022
+#umask 000
+
+### PATH ###
+PATH="./:$HOME/bin:$PATH"
+
+### VNC ###
+export XAUTHORITY=$HOME/.vnc/.Xauthority
+
+### DISPLAY ###
+if ["$VNCDESKTOP"]; then
+    if [!"$SGE_ACCOUNT"]; then
+        export DISPLAY=`echo $VNCDESKTOP | awk '{print $1}'`.0
+    fi
+fi
+
+#----------------------------#
+# キーバインド
+#----------------------------#
+export WORDCHARS="*?_-.[]~=/&;!#$%^(){}<>=."
+
+bindkey -e
+#bindkey -v
+
+### vi insert mode ###
+### vi command mode ###
+
+#----------------------------#
+# シェルの基本動作に間する設定
+#----------------------------#
+setopt auto_cd
+setopt auto_pushd
+setopt pushdtohome
+setopt correct
+setopt noautoremoveslash
+setopt extended_glob
+setopt multios
+#setopt no_multios
+setopt interactive_comments
+unsetopt promptcr
+
+### コマンドラインスタック ###
+setopt noflowcontrol
+bindkey '^q' push-line-or-edit
+
+### 補完 ###
+autoload -U compinit
+compinit
+
+zstyle ':completion:*:default' list-colos ${(s.:.)LS_COLORS}
+zstyle ':completion:*:default' menu select
+
+
+HISTFILE=~/zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt share_history
+
