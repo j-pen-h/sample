@@ -51,17 +51,17 @@
 "set mouse=a                 "マウス操作モードON
 "set ttymouse=xterm2         "ターミナルの設定
 
-"ステータスらいんの設定
+"ステータスラインの設定
 "set statusline=[b%n]%r%h%m\ %f\ %y%=%lL,%cC\ \ \ %p%%
  set statusline=[b%n]          "バッファナンバー
  set statusline+=%r            "読み取り専用かどうか
  set statusline+=%h            "Helpページかどうか
  set statusline+=%m            "ファイル変更有無
- set statusline+=%(\ )%f\ %)   "ファイル名
+ set statusline+=%(\ %f\ %)   "ファイル名
  set statusline+=%y            "ファイルタイプ
 "set statusline+=%=            "以降は右詰めで表示
- set statusline+=\ \ %lL       "カーソル位置(Line)
- set statusline+=%cC           "カーソル位置(Column)
+ set statusline+=\ \ %lL,      "カーソル位置(Line)
+ set statusline+=%cC\ \        "カーソル位置(Column)
  set statusline+=%p%%          "パーセンテージ
 
 "------------------------------------------------------------
@@ -141,7 +141,23 @@
 "set tabstop=4       "[Tab]文字を画面上の何文字分に展開するかの指定(既存の[Tab]文字に影響)
  set shiftwidth=4    "自動インデントの文字数
  set softtabstop=4   "キーボードで[Tab]キーを押したときに挿入される空白の量
- 
+
+"------------------------------------------------------------
+" ファイラー
+"------------------------------------------------------------
+ let g:netrw_liststyle = 3   "表示形式をtree viewに
+"let g:netrw_list_hide = 'CSV,\(^\|\s\s\)\zs\,\S\+'    "非表示ファイルの設定
+"let g:netrw_altv = 1        "v でファイルを開くときは右側に
+"let g:netrw_alto = 1        "o でファイルを開くときは下側に
+
+"------------------------------------------------------------
+" vimdiff
+"------------------------------------------------------------
+ set diffopt=filler      "差分行をfillerで埋める
+"set diffopt+=iwhite     "空白行の違いを無視する
+"set diffopt+=icase      "大文字/小文字の違いを無視する
+ set diffopt+=context:5  "差分行の前後n行を折り畳まずに表示
+
 "------------------------------------------------------------
 " 自動コマンド
 "------------------------------------------------------------
@@ -165,6 +181,15 @@
 
 "ファイルタイプ設定
  autocmd BufNewFile,BufRead *.com* set filetype=csh
+ autocmd BufNewFile,BufRead *.log* set filetype=tcl
+ autocmd BufNewFile,BufRead *.tcl* set filetype=tcl
+ autocmd BufNewFile,BufRead *.vg set filetype=verilog
+ autocmd BufNewFile,BufRead *.vg_* set filetype=verilog
+ autocmd BufNewFile,BufRead *.v set filetype=verilog
+ autocmd BufNewFile,BufRead *.v_* set filetype=verilog
+ autocmd BufNewFile,BufRead *.spi* set filetype=spice
+ autocmd BufNewFile,BufRead *.cdl* set filetype=spice
+ autocmd BufNewFile,BufRead *.cal* set filetype=tcsh
  
 "------------------------------------------------------------
 " プラグイン
