@@ -51,6 +51,19 @@
 "set mouse=a                 "マウス操作モードON
 "set ttymouse=xterm2         "ターミナルの設定
 
+"ステータスらいんの設定
+"set statusline=[b%n]%r%h%m\ %f\ %y%=%lL,%cC\ \ \ %p%%
+ set statusline=[b%n]          "バッファナンバー
+ set statusline+=%r            "読み取り専用かどうか
+ set statusline+=%h            "Helpページかどうか
+ set statusline+=%m            "ファイル変更有無
+ set statusline+=%(\ )%f\ %)   "ファイル名
+ set statusline+=%y            "ファイルタイプ
+"set statusline+=%=            "以降は右詰めで表示
+ set statusline+=\ \ %lL       "カーソル位置(Line)
+ set statusline+=%cC           "カーソル位置(Column)
+ set statusline+=%p%%          "パーセンテージ
+
 "------------------------------------------------------------
 " カラー関連
 "------------------------------------------------------------
