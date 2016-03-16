@@ -34,7 +34,9 @@
  set encoding=utf-8                        "文字コード
 "set encoding=euc-jp                       "文字コード
  set fileencodings=euc-jp,sjis             "文字コードの認識
+"set iskeyword=@,48-57,_,192-255           "単語として認識する文字
  set iskeyword=@,48-57,_,192-255,.,-       "単語として認識する文字
+"set isfname=@,48-57,/,.,-,_,+,,,#,$,%,~,= "gf コマンドでファイルとして認識する文字
  set isfname=@,48-57,/,.,-,_,+,,,#,$,%,~   "gf コマンドでファイルとして認識する文字
  set listchars=tab:>-,eol:$,trail:-        "不可視文字(set list/nolist で表示を切り替え)
 
@@ -165,8 +167,8 @@
  source $VIMRUNTIME/macros/matchit.vim
 
 "プラグイン設定を反映するためにファイルタイプ設定をON
- filetype on          "ファイルタイプの自動表示をON
- filetype plugin on   "ファイルタイプ別プラグインのロードON
+ filetype on          "ファイルタイプの自動検出をON
+ filetype plugin on   "ファイルタイプ別プラグインのロードをON
  filetype indent on   "ファイルタイプ別インデント設定のロードをON
  
 "------------------------------------------------------------
