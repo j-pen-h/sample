@@ -95,7 +95,7 @@
  set nowildmenu          "コマンド補完の強化OFF
  set wildchar=<tab>      "コマンド補完を開始するキー
 "set wildmode=list:full  "リスト表示、最長マッチ
- set wildmode=longest,list:full  "共通文字補完=>リスト表示=>完全補完
+ set wildmode=longest,list,full  "共通文字補完=>リスト表示=>完全補完
  set history=10000       "コマンド・検索パターンの履歴数
  set complete=.          "補完候補をカレントバッファの単語のみに設定
  
@@ -162,11 +162,12 @@
  endif
 
  set runtimepath+=~j-hori/.vim
+ source $VIMRUNTIME/macros/matchit.vim
 
 "プラグイン設定を反映するためにファイルタイプ設定をON
- filetype on
- filetype plugin on
- filetype indent on
+ filetype on          "ファイルタイプの自動表示をON
+ filetype plugin on   "ファイルタイプ別プラグインのロードON
+ filetype indent on   "ファイルタイプ別インデント設定のロードをON
  
 "------------------------------------------------------------
 " カーソル移動
@@ -194,13 +195,13 @@
  set virtualedit+=block    "ビジュアル矩形選択モード時のみ
  
 "括弧等の入力時にカーソルを内側へ移動
- inoremap {} {}<LEFT>
- inoremap [] []<LEFT>
- inoremap () ()<LEFT>
- inoremap "" ""<LEFT>
- inoremap '' ''<LEFT>
- inoremap <> <><LEFT>
- inoremap // //<LEFT>
+"inoremap {} {}<LEFT>
+"inoremap [] []<LEFT>
+"inoremap () ()<LEFT>
+"inoremap "" ""<LEFT>
+"inoremap '' ''<LEFT>
+"inoremap <> <><LEFT>
+"inoremap // //<LEFT>
  
 "------------------------------------------------------------
 " ウィンドウ/タブ関連
@@ -264,12 +265,13 @@
 
 "カーソル下のキーワードをヘルプでひく
  nnoremap [Space]i :<C-u>help <C-r><C-w><CR>
+
 "カーソル下の単語をvimgrepする(カレントバッファ)
-
  nnoremap [Space]g :<C-u>vimgrep /<C-r><C-w>/j % \|cw
-"カーソル下のファイルを開く(同じウィンドウで)
 
+"カーソル下のファイルを開く(同じウィンドウで)
  nnoremap [Space]e gf
+
 "カーソル下のファイルを開く(新規タブで)
  nnoremap [Space]n <C-w>gf
 
@@ -287,7 +289,7 @@
      endif
  endfunction
 "nnoremap [Space]c BvEy :call g:check("<C-r>"")<CR>
- nnoremap [Space]j :set iskeyword+=/<CR> bvey :set iskeyword-=<CR> :call g:check("<C-r>"")<CR>
+ nnoremap [Space]j :set iskeyword+=/<CR> bvey :set iskeyword-=/<CR> :call g:check("<C-r>"")<CR>
 
 "------------------------------------------------------------
 " トグル
@@ -311,7 +313,7 @@
 "行の折り返し表示のトグル
  nnoremap [Toggle]w :<C-u>set wrap!<CR>
 
-"カーソル強調表示のトグル
+"カーソル行強調表示のトグル
  nnoremap [Toggle]l :<C-u>set cursorline!<CR>
  
 "ペーストモードのトグル(挿入モード)
