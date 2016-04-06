@@ -1,218 +1,173 @@
-"-------------------------------------------------------------------------------
-" vimèµ·å‹•ä¸­ã«.vimrcã‚’ç·¨é›†/å†èª­ã¿è¾¼ã¿
-"-------------------------------------------------------------------------------
- command! Ev edit $MYVIMRC     ".vimrcã®ç·¨é›†
- command! Rv source $MYVIMRC   ".vimrcã®å†èª­ã¿è¾¼ã¿
+"------------------------------------------------------------
+" vimµ¯Æ°Ãæ¤Ë.vimrc¤òÊÔ½¸/ºÆÆÉ¤ß¹ş¤ß
+"------------------------------------------------------------
+ command! Ev edit $MYVIMRC     ".vimrc¤ÎÊÔ½¸
+ command! Rv source $MYVIMRC   ".vimrc¤ÎºÆÆÉ¤ß¹ş¤ß
 
-"-------------------------------------------------------------------------------
-" åŸºæœ¬è¨­å®š
-"-------------------------------------------------------------------------------
- let mapleader = ","                       "ã‚­ãƒ¼ãƒãƒƒãƒ—ãƒªãƒ¼ãƒ€ãƒ¼
- set scrolloff=5                           "ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«æ™‚ã®ä½™ç™½ç¢ºä¿
- set textwidth=0                           "ä¸€è¡Œã«é•·ã„æ–‡ç« ã‚’æ›¸ã„ã¦ã„ã¦ã‚‚è‡ªå‹•æŠ˜ã‚Šè¿”ã—ã‚’ã—ãªã„
-"set noswapfile                            "ã‚¹ãƒ¯ãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«(*.swp)ã‚’ä½œæˆã—ãªã„
- set directory=~/.vim/tmp                  "ã‚¹ãƒ¯ãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«(*.swp)ã®å‡ºåŠ›å…ˆ
- set nobackup                              "ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«(*~)ã‚’ä½œæˆã—ãªã„
- set backupdir=~/.vim/tmp                  "ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«(*~)ã®å‡ºåŠ›å…ˆ
- set autoread                              "ä»–ã§æ›¸ãæ›ãˆã‚‰ã‚ŒãŸã‚‰è‡ªå‹•ã§èª­ã¿ç›´ã™
- set hidden                                "ç·¨é›†ä¸­ã§ã‚‚ä»–ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã‘ã‚‹ã‚ˆã†ã«ã™ã‚‹
- set backspace=indent,eol,start            "ãƒãƒƒã‚¯ã‚¹ãƒšãƒ¼ã‚¹ã§ãªã‚“ã§ã‚‚æ¶ˆã›ã‚‹ã‚ˆã†ã«
-"set formatoptions=lmoq                    "ãƒ†ã‚­ã‚¹ãƒˆæ•´å½¢ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã€ãƒãƒ«ãƒãƒã‚¤ãƒˆç³»ã‚’è¿½åŠ 
- set vb t_vb=                              "ãƒ“ãƒ¼ãƒ—ã‚’é³´ã‚‰ã•ãªã„
- set browsedir=buffer                      "Exploreã®åˆæœŸãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
-"set whichwrap=b,s,h,l,<,>,[,]             "ã‚«ãƒ¼ã‚½ãƒ«ã‚’è¡Œé ­ã€è¡Œæœ«ã§æ­¢ã¾ã‚‰ãªã„ã‚ˆã†ã«ã™ã‚‹
- set showcmd                               "ã‚³ãƒãƒ³ãƒ‰ã‚’ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹è¡Œã«è¡¨ç¤º
- set showmode                              "ç¾åœ¨ã®ãƒ¢ãƒ¼ãƒ‰ã‚’è¡¨ç¤º
- set viminfo='50,<1000,s100,\"50           "viminfoãƒ•ã‚¡ã‚¤ãƒ«(.viminfo)ã®è¨­å®š
- set modelines=0                           "ãƒ¢ãƒ¼ãƒ‰ãƒ©ã‚¤ãƒ³ã¯ç„¡åŠ¹
- set notitle                               "ã‚¿ã‚¤ãƒˆãƒ«éè¡¨ç¤º(vimã‚’ä½¿ã£ã¦ãã‚Œã¦ã‚ã‚ŠãŒã¨ã†å¯¾ç­–)
- set cursorline                            "ã‚«ãƒ¼ã‚½ãƒ«è¡Œã®å¼·èª¿è¡¨ç¤ºON
-"set cursorcolumn                          "ã‚«ãƒ¼ã‚½ãƒ«åˆ—ã®å¼·èª¿è¡¨ç¤ºON
- set number                                "è¡Œç•ªå·ã‚’è¡¨ç¤º
- set ruler                                 "ã‚«ãƒ¼ã‚½ãƒ«ä½ç½®ã‚’è¡¨ç¤º
- set laststatus=2                          "å¸¸ã«ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ©ã‚¤ãƒ³ã‚’è¡¨ç¤º
- set encoding=utf-8                        "æ–‡å­—ã‚³ãƒ¼ãƒ‰
-"set encoding=euc-jp                       "æ–‡å­—ã‚³ãƒ¼ãƒ‰
- set fileencodings=euc-jp,sjis             "æ–‡å­—ã‚³ãƒ¼ãƒ‰ã®èªè­˜
-"set iskeyword=@,48-57,_,192-255           "å˜èªã¨ã—ã¦èªè­˜ã™ã‚‹æ–‡å­—
- set iskeyword=@,48-57,_,192-255,.,-       "å˜èªã¨ã—ã¦èªè­˜ã™ã‚‹æ–‡å­—
-"set isfname=@,48-57,/,.,-,_,+,,,#,$,%,~,= "gf ã‚³ãƒãƒ³ãƒ‰ã§ãƒ•ã‚¡ã‚¤ãƒ«ã¨ã—ã¦èªè­˜ã™ã‚‹æ–‡å­—
- set isfname=@,48-57,/,.,-,_,+,,,#,$,%,~   "gf ã‚³ãƒãƒ³ãƒ‰ã§ãƒ•ã‚¡ã‚¤ãƒ«ã¨ã—ã¦èªè­˜ã™ã‚‹æ–‡å­—
- set listchars=tab:>-,eol:$,trail:-        "ä¸å¯è¦–æ–‡å­—(set list/nolist ã§è¡¨ç¤ºã‚’åˆ‡ã‚Šæ›¿ãˆ)
+"------------------------------------------------------------
+" ´ğËÜÀßÄê
+"------------------------------------------------------------
+ let mapleader = ","                       "¥­¡¼¥Ş¥Ã¥×¥ê¡¼¥À
+ set scrolloff=5                           "¥¹¥¯¥í¡¼¥ë»ş¤ÎÍ¾Çò³ÎÊİ
+ set textwidth=0                           "°ì¹Ô¤ËÄ¹¤¤Ê¸¾Ï¤ò½ñ¤¤¤Æ¤â¼«Æ°ÀŞ¤êÊÖ¤·¤ò¤·¤Ê¤¤
+"set noswapfile                            "¥¹¥ï¥Ã¥×¥Õ¥¡¥¤¥ë(*.swp)¤òºîÀ®¤·¤Ê¤¤
+ set directory=~/.vim/tmp                  "¥¹¥ï¥Ã¥×¥Õ¥¡¥¤¥ë(*.swp)¤Î½ĞÎÏÀè
+"set nobackup                              "¥Ğ¥Ã¥¯¥¢¥Ã¥×¥Õ¥¡¥¤¥ë(*~)¤òºîÀ®¤·¤Ê¤¤
+ set backupdir=~/.vim/tmp                  "¥Ğ¥Ã¥¯¥¢¥Ã¥×¥Õ¥¡¥¤¥ë(*~)¤Î½ĞÎÏÀè
+ set autoread                              "Â¾¤Ç½ñ¤­´¹¤¨¤¿¤é¼«Æ°¤ÇÆÉ¤ßÄ¾¤¹
+ set hidden                                "ÊÔ½¸Ãæ¤Ç¤âÂ¾¤Î¥Õ¥¡¥¤¥ë¤ò³«¤±¤ë¤è¤¦¤Ë¤¹¤ë
+ set backspace=indent,eol,start            "¥Ğ¥Ã¥¯¥¹¥Ú¡¼¥¹¤Ç²¿¤Ç¤â¾Ã¤»¤ë¤è¤¦¤Ë
+ set formatoptions=lmoq                    "¥Æ¥­¥¹¥ÈÀ°·Á¥ª¥×¥·¥ç¥ó¡¢¥Ş¥ë¥Á¥Ğ¥¤¥È·Ï¤òÄÉ²Ã
+ set vb t_vb=                              "¥Ó¡¼¥×¤òÌÄ¤é¤µ¤Ê¤¤
+ set browsedir=buffer                      "Explore¤Î½é´ü¥Ç¥£¥ì¥¯¥È¥ê
+"set whichwrap=b,s,h,l,<,>,[,]             "¥«¡¼¥½¥ë¤ò¹ÔÆ¬¡¢¹ÔËö¤Ç»ß¤Ş¤é¤Ê¤¤¤è¤¦¤Ë¤¹¤ë
+ set showcmd                               "¥³¥Ş¥ó¥É¤ò¥¹¥Æ¡¼¥¿¥¹¹Ô¤ËÉ½¼¨
+ set showmode                              "¸½ºß¤Î¥â¡¼¥É¤òÉ½¼¨
+ set viminfo='50,<1000,s100,\"50           "viminfo¥Õ¥¡¥¤¥ë(.viminfo)¤ÎÀßÄê
+ set modelines=0                           "¥â¡¼¥É¥é¥¤¥ó¤ÏÌµ¸ú
+ set notitle                               "¥¿¥¤¥È¥ëÈóÉ½¼¨(vim¤ò»È¤Ã¤Æ¤¯¤ì¤Æ¤¢¤ê¤¬¤È¤¦ÂĞºö)
+ set cursorline                            "¥«¡¼¥½¥ë¹Ô¤Î¶¯Ä´É½¼¨ON
+"set corsorcolumun                         "¥«¡¼¥½¥ëÎó¤Î¶¯Ä´É½¼¨ON
+ set number                                "¹ÔÈÖ¹æ¤òÉ½¼¨
+ set ruler                                 "¥«¡¼¥½¥ë°ÌÃÖ¤òÉ½¼¨
+ set laststatus=2                          "¾ï¤Ë¥¹¥Æ¡¼¥¿¥¹¥é¥¤¥ó¤òÉ½¼¨
+ set encoding=utf-8                        "Ê¸»ú¥³¡¼¥É
+"set encoding=euc-jp                       "Ê¸»ú¥³¡¼¥É
+ set fileencodings=euc-jp,sjis             "Ê¸»ú¥³¡¼¥É¤ÎÇ§¼±
+ set iskeyword=@,48-57,_,192-255,,,-       "Ã±¸ì¤È¤·¤ÆÇ§¼±¤¹¤ëÊ¸»ú
+ set isfname=@,48-57,/,.,-,_,+,,,#,$,%,~   "gf¥³¥Ş¥ó¥É¥é¥¤¥ó¤Ç¥Õ¥¡¥¤¥ë¤È¤·¤ÆÇ§¼±¤¹¤ëÊ¸»ú
+ set listchars=tab:>-,eol:$,trail:-        "ÉÔ²Ä»ëÊ¸»ú(set list/nolist¤ÇÉ½¼¨¤òÀÚ¤êÂØ¤¨)
 
-"OSã®ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰
-"'vim --version' ã§ '+clipboard' ã§ã‚ã‚Œã°ä½¿ç”¨å¯èƒ½
-"set clipboard+=autoselect   "ãƒ“ã‚¸ãƒ¥ã‚¢ãƒ«ãƒ¢ãƒ¼ãƒ‰ã§é¸æŠã—ãŸãƒ†ã‚­ã‚¹ãƒˆã‚’ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«å…¥ã‚Œã‚‹
-"set guioptions+=a           "ãƒ“ã‚¸ãƒ¥ã‚¢ãƒ«ãƒ¢ãƒ¼ãƒ‰ã§é¸æŠã—ãŸãƒ†ã‚­ã‚¹ãƒˆã‚’ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«å…¥ã‚Œã‚‹
-"set clipboard=unnamed       "ãƒ¤ãƒ³ã‚¯ã—ãŸãƒ†ã‚­ã‚¹ãƒˆã‚’ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«å…¥ã‚Œã‚‹
+"OS¤Î¥¯¥ê¥Ã¥×¥Ü¡¼¥É
+"'vim --version'¤Ç'+clipboard'¤Ç¤¢¤ì¤Ğ»ÈÍÑ²ÄÇ½
+"set clipboard+=autoselect   "¥Ó¥¸¥å¥¢¥ë¥â¡¼¥É¤ÇÁªÂò¤·¤¿¥Æ¥­¥¹¥È¤ò¥¯¥ê¥Ã¥×¥Ü¡¼¥É¤ËÆş¤ì¤ë
+"set guioptions+=a           "¥Ó¥¸¥å¥¢¥ë¥â¡¼¥É¤ÇÁªÂò¤·¤¿¥Æ¥­¥¹¥È¤ò¥¯¥ê¥Ã¥×¥Ü¡¼¥É¤ËÆş¤ì¤ë
+"set clipboard=unnamed       "¥ä¥ó¥¯¤·¤¿¥Æ¥­¥¹¥È¤ò¥¯¥ê¥Ã¥×¥Ü¡¼¥É¤ËÆş¤ì¤ë
 
-"ãƒã‚¦ã‚¹æ“ä½œã®è¨­å®š
- set mouse=                  "ãƒã‚¦ã‚¹æ“ä½œãƒ¢ãƒ¼ãƒ‰OFF
-"set mouse=a                 "ãƒã‚¦ã‚¹æ“ä½œãƒ¢ãƒ¼ãƒ‰ON
-"set ttymouse=xterm2         "ã‚¿ãƒ¼ãƒŸãƒŠãƒ«ã®è¨­å®š
+"¥Ş¥¦¥¹Áàºî¤ÎÀßÄê
+ set mouse=                  "¥Ş¥¦¥¹Áàºî¥â¡¼¥ÉOFF
+"set mouse=a                 "¥Ş¥¦¥¹Áàºî¥â¡¼¥ÉON
+"set ttymouse=xterm2         "¥¿¡¼¥ß¥Ê¥ë¤ÎÀßÄê
 
-"ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ©ã‚¤ãƒ³ã®è¨­å®š
-"set statusline=[b%n]%r%h%m\ %f\ %y%=%lL,%cC\ \ \ %p%%
- set statusline=[b%n]          "ãƒãƒƒãƒ•ã‚¡ãƒŠãƒ³ãƒãƒ¼
- set statusline+=%r            "èª­ã¿å–ã‚Šå°‚ç”¨ã‹ã©ã†ã‹
- set statusline+=%h            "Helpãƒšãƒ¼ã‚¸ã‹ã©ã†ã‹
- set statusline+=%m            "ãƒ•ã‚¡ã‚¤ãƒ«å¤‰æ›´æœ‰ç„¡
- set statusline+=%(\ %f\ %)   "ãƒ•ã‚¡ã‚¤ãƒ«å
- set statusline+=%y            "ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒ—
-"set statusline+=%=            "ä»¥é™ã¯å³è©°ã‚ã§è¡¨ç¤º
- set statusline+=\ \ %lL,      "ã‚«ãƒ¼ã‚½ãƒ«ä½ç½®(Line)
- set statusline+=%cC\ \        "ã‚«ãƒ¼ã‚½ãƒ«ä½ç½®(Column)
- set statusline+=%p%%          "ãƒ‘ãƒ¼ã‚»ãƒ³ãƒ†ãƒ¼ã‚¸
-
-"-------------------------------------------------------------------------------
-" ã‚«ãƒ©ãƒ¼é–¢é€£
-"-------------------------------------------------------------------------------
- colorscheme default         "ã‚«ãƒ©ãƒ¼ã‚¹ã‚­ãƒ¼ãƒ
- set background=light        "èƒŒæ™¯è‰²ã®ã‚¿ã‚¤ãƒ—
- set t_Co=256                "ã‚¿ãƒ¼ãƒŸãƒŠãƒ«ã®è¡¨ç¤ºè‰²
- syntax enable               "ã‚·ãƒ³ã‚¿ãƒƒã‚¯ã‚¹ãƒã‚¤ãƒ©ã‚¤ãƒˆON
+"------------------------------------------------------------
+" ¥«¥é¡¼ÀßÄê
+"------------------------------------------------------------
+"colorscheme default         "¥«¥é¡¼¥¹¥­¡¼¥Ş
+"set background=light        "ÇØ·Ê¿§¤Î¥¿¥¤¥×
+ set t_Co=256                "¥¿¡¼¥ß¥Ê¥ë¤ÎÉ½¼¨¿§
+ syntax enable               "¥·¥ó¥¿¥Ã¥¯¥¹¥Ï¥¤¥é¥¤¥ÈON
  
- hi CursorLine cterm=none ctermbg=255                       "ã‚«ãƒ¼ã‚½ãƒ«è¡Œ
- hi Search ctermbg=220                                       "æ¤œç´¢çµæœ
- hi LineNr ctermfg=black ctermbg=252                        "è¡Œç•ªå·
- hi Error cterm=underline ctermfg=red ctermbg=none          "ã‚·ãƒ³ã‚¿ãƒƒã‚¯ã‚¹ã‚¨ãƒ©ãƒ¼
- hi Visual ctermbg=250                                      "ãƒ“ã‚¸ãƒ¥ã‚¢ãƒ«ãƒ¢ãƒ¼ãƒ‰
- hi Comment ctermfg=27                                      "ã‚³ãƒ¡ãƒ³ãƒˆ
- hi NonText cterm=bold ctermfg=213                          "æ”¹è¡Œæ–‡å­—
- hi SpecialKey cterm=bold ctermfg=213                       "ã‚¿ãƒ–æ–‡å­—
- hi Directory cterm=bold ctermfg=blue                       "ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+"hi CursorLine cterm=none ctermbg=255                       "¥«¡¼¥½¥ë¹Ô
+"hi Serch ctermbg=220                                       "¸¡º÷·ë²Ì
+"hi LineNr ctermfg=black ctermbg=252                        "¹ÔÈÖ¹æ
+"hi Error cterm=underline ctermfg=red ctermbg=none          "¥·¥ó¥¿¥Ã¥¯¥¹¥¨¥é¡¼
+"hi Visual ctermbg=250                                      "¥Ó¥¸¥å¥¢¥ë¥â¡¼¥É
+"hi Comment ctermfg=27                                      "¥³¥á¥ó¥È
+"hi NonText cterm=bold ctermbg=213                          "²ş¹ÔÊ¸»ú
+"hi SpecialKey cterm=bold ctermbg=213                       "¥¿¥ÖÊ¸»ú
 
-"ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ©ã‚¤ãƒ³
- hi StatusLine cterm=bold ctermfg=white ctermbg=12          "ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
- hi StatusLineNC cterm=none ctermfg=white ctermbg=darkgray  "éã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
+"¥¹¥Æ¡¼¥¿¥¹¥é¥¤¥ó
+"hi StatusLine cterm=bold ctermfg=white ctermbg=12          "¥¢¥¯¥Æ¥£¥Ö¥¦¥£¥ó¥É¥¦
+"hi StatusLineNC cterm=none ctermfg=white ctermbg=darkgray  "Èó¥¢¥¯¥Æ¥£¥Ö¥¦¥£¥ó¥É¥¦
 
-"ã‚¿ãƒ–
- hi TabLineSel cterm=bold ctermfg=white ctermbg=12          "ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚¿ãƒ–
- hi TabLine cterm=none ctermfg=white ctermbg=darkgray       "éã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚¿ãƒ–
- hi TabLineFill cterm=underline ctermfg=none ctermbg=none   "ã‚¿ãƒ–è¡¨ç¤ºè¡Œã®ä½™ç™½
+"¥¿¥Ö
+"hi TabLineSel cterm=bold ctermfg=white ctermbg=12          "¥¢¥¯¥Æ¥£¥Ö¥¿¥Ö
+"hi TabLine cterm=none ctermfg=white ctermbg=darkgray       "Èó¥¢¥¯¥Æ¥£¥Ö¥¿¥Ö
+"hi TabLineSel cterm=underline ctermfg=none ctermbg=none    "¥¿¥ÖÉ½¼¨¹Ô¤ÎÍ¾Çò
 
-"ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ãƒ¡ãƒ‹ãƒ¥ãƒ¼
- hi Pmenu ctermbg=253                                       "è£œå®Œå€™è£œ
- hi PmenuSel ctermbg=250                                    "é¸æŠä¸­ã®è£œå®Œå€™è£œ
- hi PmenuSbar ctermbg=253                                   "ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼
- hi PmenuThumb ctermbg=245 cterm=none                       "ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼
+"¥İ¥Ã¥×¥¢¥Ã¥×¥á¥Ë¥å¡¼
+"hi Pmenu ctermbg=253                                       "Êä´°¸õÊä
+"hi PmenuSel ctermbg=250                                    "ÁªÂòÃæ¤ÎÊä´°¸õÊä
+"hi PmenuSbar ctermbg=253                                   "¥¹¥¯¥í¡¼¥ë¥Ğ¡¼
+"hi PmenuThumb ctermbg=245 cterm=none                       "¥¹¥é¥¤¥À¡¼
 
-"å·®åˆ†
- hi DiffAdd ctermfg=black ctermbg=lightblue                 "è¿½åŠ è¡Œ
- hi DiffChange ctermfg=black ctermbg=lightmagenta           "å¤‰æ›´è¡Œ
- hi DiffDelete ctermfg=black ctermbg=lightcyan              "å‰Šé™¤è¡Œ
- hi DiffText ctermfg=black ctermbg=red cterm=none           "å¤‰æ›´ç®‡æ‰€
+"º¹Ê¬
+"hi DiffAdd ctermfg=black ctermbg=lightblue                 "ÄÉ²Ã¹Ô
+"hi DiffChange ctermfg=black ctermbg=lightmagenta           "ÊÑ¹¹¹Ô
+"hi DiffDelete ctermfg=black ctermbg=lightcyan              "ºï½ü¹Ô
+"hi DiffText ctermfg=black ctermbg=red cterm=none           "ÊÑ¹¹²Õ½ê
  
-"-------------------------------------------------------------------------------
-" è£œå®Œ/å±¥æ­´
-"-------------------------------------------------------------------------------
-"set wildmenu            "ã‚³ãƒãƒ³ãƒ‰è£œå®Œã®å¼·åŒ–ON
- set nowildmenu          "ã‚³ãƒãƒ³ãƒ‰è£œå®Œã®å¼·åŒ–OFF
- set wildchar=<tab>      "ã‚³ãƒãƒ³ãƒ‰è£œå®Œã‚’é–‹å§‹ã™ã‚‹ã‚­ãƒ¼
-"set wildmode=list:full  "ãƒªã‚¹ãƒˆè¡¨ç¤ºã€æœ€é•·ãƒãƒƒãƒ
- set wildmode=longest,list,full  "å…±é€šæ–‡å­—è£œå®Œ=>ãƒªã‚¹ãƒˆè¡¨ç¤º=>å®Œå…¨è£œå®Œ
- set history=10000       "ã‚³ãƒãƒ³ãƒ‰ãƒ»æ¤œç´¢ãƒ‘ã‚¿ãƒ¼ãƒ³ã®å±¥æ­´æ•°
- set complete=.          "è£œå®Œå€™è£œã‚’ã‚«ãƒ¬ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡ã®å˜èªã®ã¿ã«è¨­å®š
+"------------------------------------------------------------
+" Êä´°/ÍúÎò
+"------------------------------------------------------------
+ set wildmenu            "¥³¥Ş¥ó¥ÉÊä´°¤ò¶¯²½
+ set wildchar=<tab>      "¥³¥Ş¥ó¥ÉÊä´°¤ò³«»Ï¤¹¤ë¥­¡¼
+ set wildmode=list:full  "¥ê¥¹¥ÈÉ½¼¨¡¢ºÇÄ¹¥Ş¥Ã¥Á
+ set history=1000        "¥³¥Ş¥ó¥É¡¦¸¡º÷¥Ñ¥¿¡¼¥ó¤ÎÍúÎò¿ô
+ set complete=.          "Êä´°¸õÊä¤ò¥«¥ì¥ó¥È¥Ğ¥Ã¥Õ¥¡¤ÎÃ±¸ì¤Î¤ß¤ËÀßÄê
  
-"å±¥æ­´ã‚’æ¤œç´¢ 
+"ÍúÎò¤ò¸¡º÷ 
  cnoremap <C-p> <Up>
  cnoremap <C-n> <Down>
-"å±¥æ­´ã‚’è¡¨ç¤º
+"ÍúÎò¤òÉ½¼¨
  cnoremap <Up> <C-p>
  cnoremap <Down> <C-n>
  
-"-------------------------------------------------------------------------------
-" æ¤œç´¢
-"-------------------------------------------------------------------------------
-"set wrapscan     "æœ€å¾Œã¾ã§æ¤œç´¢ã—ãŸã‚‰å…ˆé ­ã¸æˆ»ã‚‹
- set nowrapscan   "æœ€å¾Œã¾ã§æ¤œç´¢ã—ãŸã‚‰å…ˆé ­ã¸æˆ»ã‚‰ãªã„
- set ignorecase   "å¤§æ–‡å­—/å°æ–‡å­—ã‚’åŒºåˆ¥ã—ãªã„ã§æ¤œç´¢
- set smartcase    "æ¤œç´¢æ–‡å­—åˆ—ã«å¤§æ–‡å­—ã‚’å«ã‚€å ´åˆã¯å¤§æ–‡å­—/å°æ–‡å­—ã‚’åŒºåˆ¥ã—ã¦æ¤œç´¢
- set incsearch    "ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ã‚¿ãƒ«ã‚µãƒ¼ãƒ
- set hlsearch     "æ¤œç´¢æ–‡å­—ã‚’ãƒã‚¤ãƒ©ã‚¤ãƒˆ
+"------------------------------------------------------------
+" ¸¡º÷
+"------------------------------------------------------------
+ set wrapscan     "ºÇ¸å¤Ş¤Ç¸¡º÷¤·¤¿¤éÀèÆ¬¤ØÌá¤ë
+ set ignorecase   "ÂçÊ¸»ú/¾®Ê¸»ú¤ò¶èÊÌ¤·¤Ê¤¤¤Ç¸¡º÷
+ set smartcase    "¸¡º÷Ê¸»úÎó¤ËÂçÊ¸»ú¤ò´Ş¤à¾ì¹ç¤ÏÂçÊ¸»ú/¾®Ê¸»ú¤ò¶èÊÌ¤·¤Æ¸¡º÷
+ set incsearch    "¥¤¥ó¥¯¥ê¥á¥ó¥¿¥ë¥µ¡¼¥Á
+ set hlsearch     "¸¡º÷Ê¸»úÎó¤ò¥Ï¥¤¥é¥¤¥È
  
-"-------------------------------------------------------------------------------
-" ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
-"-------------------------------------------------------------------------------
- set autoindent      "è‡ªå‹•ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆON
- set smartindent     "æ–°ã—ã„è¡Œã‚’é–‹å§‹ã—ãŸã¨ãã«ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã‚’ç¾åœ¨ã®è¡Œã¨æƒãˆã‚‹
- set cindent         "Cè¨€èªã‚¹ã‚¿ã‚¤ãƒ«ã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆON
- set expandtab       "[Tab]å…¥åŠ›ã‚’è¤‡æ•°ã®ç©ºç™½å…¥åŠ›ã«ç½®ãæ›ãˆã‚‹(æ—¢å­˜ã®[Tab]æ–‡å­—ã«ã¯å½±éŸ¿ã—ãªã„)
-"set tabstop=4       "[Tab]æ–‡å­—ã‚’ç”»é¢ä¸Šã®ä½•æ–‡å­—åˆ†ã«å±•é–‹ã™ã‚‹ã‹ã®æŒ‡å®š(æ—¢å­˜ã®[Tab]æ–‡å­—ã«å½±éŸ¿)
- set shiftwidth=4    "è‡ªå‹•ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã®æ–‡å­—æ•°
- set softtabstop=4   "ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã§[Tab]ã‚­ãƒ¼ã‚’æŠ¼ã—ãŸã¨ãã«æŒ¿å…¥ã•ã‚Œã‚‹ç©ºç™½ã®é‡
+"------------------------------------------------------------
+" ¥¤¥ó¥Ç¥ó¥È
+"------------------------------------------------------------
+ set autoindent      "¼«Æ°¥¤¥ó¥Ç¥ó¥ÈON
+ set smartindent     "¿·¤·¤¤¹Ô¤ò³«»Ï¤·¤¿¤È¤­¤Ë¥¤¥ó¥Ç¥ó¥È¤ò¸½ºß¤Î¹Ô¤ÈÂ·¤¨¤ë
+ set cindent         "C¸À¸ì¥¹¥¿¥¤¥ë¤Î¥¤¥ó¥Ç¥ó¥ÈON
+ set expandtab       "[Tab]ÆşÎÏ¤òÊ£¿ô¤Î¶õÇòÆşÎÏ¤ËÃÖ¤­´¹¤¨¤ë(´ûÂ¸¤Î[Tab]Ê¸»ú¤Ë¤Ï±Æ¶Á¤·¤Ê¤¤)
+"set tabstop=4       "[Tab]Ê¸»ú¤ò²èÌÌ¾å¤Î²¿Ê¸»úÊ¬¤ËÅ¸³«¤¹¤ë¤«¤Î»ØÄê(´ûÂ¸¤Î[Tab]Ê¸»ú¤Ë±Æ¶Á)
+ set shiftwidth=4    "¼«Æ°¥¤¥ó¥Ç¥ó¥È¤ÎÊ¸»ú¿ô
+ set softtabstop=4   "¥­¡¼¥Ü¡¼¥É¤Ç[Tab]¥­¡¼¤ò²¡¤·¤¿¤È¤­¤ËÁŞÆş¤µ¤ì¤ë¶õÇò¤ÎÎÌ
+ 
+"------------------------------------------------------------
+" ¼«Æ°¥³¥Ş¥ó¥É
+"------------------------------------------------------------
+"¥¢¥¯¥Æ¥£¥Ö¥¦¥£¥ó¥É¥¦¤Ë¸Â¤ê¥«¡¼¥½¥ë¹Ô¤ò¶¯Ä´¤¹¤ë
+"augroup vimrc_set_cursorline_only_active_window
+"    autocmd!
+"    autocmd VimEnter,BufWinEnter,WinEnter * setlocal cursorline
+"    autocmd WinLeave * setlocal nocursorline
+"augroup END
+"
+"ÁŞÆş¥â¡¼¥É¤ËÆş¤Ã¤¿¤È¤­¤Ë¥«¡¼¥½¥ë¹Ô¤Î¿§¤òÊÑ¹¹¤¹¤ë
+"augroup vimrc_change_cursorline_color
+"    autocmd!
+"    autocmd InsertEnter * hi CursorLine cterm=none ctermbg=lightred
+"    autocmd InsertLeave * hi CursorLine cterm=none ctermbg=255
+"augroup END
 
-"-------------------------------------------------------------------------------
-" ãƒ•ã‚¡ã‚¤ãƒ©ãƒ¼(netrw)
-"-------------------------------------------------------------------------------
- let g:netrw_liststyle = 3   "è¡¨ç¤ºå½¢å¼ã‚’tree viewã«
-"let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'    "éè¡¨ç¤ºãƒ•ã‚¡ã‚¤ãƒ«ã®è¨­å®š
-"let g:netrw_altv = 1        "v ã§ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãã¨ãã¯å³å´ã«
-"let g:netrw_alto = 1        "o ã§ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãã¨ãã¯ä¸‹å´ã«
-
-"-------------------------------------------------------------------------------
-" vimdiff
-"-------------------------------------------------------------------------------
- set diffopt=filler      "å·®åˆ†è¡Œã‚’fillerã§åŸ‹ã‚ã‚‹
-"set diffopt+=iwhite     "ç©ºç™½æ•°ã®é•ã„ã‚’ç„¡è¦–ã™ã‚‹
-"set diffopt+=icase      "å¤§æ–‡å­—/å°æ–‡å­—ã®é•ã„ã‚’ç„¡è¦–ã™ã‚‹
- set diffopt+=context:5  "å·®åˆ†è¡Œã®å‰å¾Œnè¡Œã‚’æŠ˜ã‚Šç•³ã¾ãšã«è¡¨ç¤º
-
-"-------------------------------------------------------------------------------
-" è‡ªå‹•ã‚³ãƒãƒ³ãƒ‰
-"-------------------------------------------------------------------------------
-"ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã«é™ã‚Šã‚«ãƒ¼ã‚½ãƒ«è¡Œã‚’å¼·èª¿ã™ã‚‹
- augroup vimrc_set_cursorline_only_active_window
-     autocmd!
-     autocmd VimEnter,BufWinEnter,WinEnter * setlocal cursorline
-     autocmd WinLeave * setlocal nocursorline
- augroup END
-
-"æŒ¿å…¥ãƒ¢ãƒ¼ãƒ‰ã«å…¥ã£ãŸã¨ãã«ã‚«ãƒ¼ã‚½ãƒ«è¡Œã®è‰²ã‚’å¤‰æ›´ã™ã‚‹
- augroup vimrc_change_cursorline_color
-     autocmd!
-     autocmd InsertEnter * hi CursorLine cterm=none ctermbg=lightred
-     autocmd InsertLeave * hi CursorLine cterm=none ctermbg=255
- augroup END
-
-"è‡ªå‹•çš„ã«QuickFixãƒªã‚¹ãƒˆã‚’è¡¨ç¤ºã™ã‚‹
+"¼«Æ°Åª¤ËQuickFix¥ê¥¹¥È¤òÉ½¼¨¤¹¤ë
  autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
- autocmd QuickfixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
+ autocmd QuickfixCmdPost |make,|grep,|grepadd,|vimgrep,|vimgrepadd |cwin
 
-"ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒ—è¨­å®š
+"¥Õ¥¡¥¤¥ë¥¿¥¤¥×ÀßÄê
  autocmd BufNewFile,BufRead *.com* set filetype=csh
- autocmd BufNewFile,BufRead *.log* set filetype=tcl
- autocmd BufNewFile,BufRead *.tcl* set filetype=tcl
- autocmd BufNewFile,BufRead *.vg set filetype=verilog
- autocmd BufNewFile,BufRead *.vg_* set filetype=verilog
- autocmd BufNewFile,BufRead *.v set filetype=verilog
- autocmd BufNewFile,BufRead *.v_* set filetype=verilog
- autocmd BufNewFile,BufRead *.spi* set filetype=spice
- autocmd BufNewFile,BufRead *.cdl* set filetype=spice
- autocmd BufNewFile,BufRead *.cal* set filetype=tcsh
  
-"-------------------------------------------------------------------------------
-" ãƒ—ãƒ©ã‚°ã‚¤ãƒ³
-"-------------------------------------------------------------------------------
-"ãƒ—ãƒ©ã‚°ã‚¤ãƒ³è¨­å®šã‚’åæ˜ ã™ã‚‹ãŸã‚ã«ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒ—è¨­å®šã‚’ä¸€æ—¦OFF
+"------------------------------------------------------------
+" ¥×¥é¥°¥¤¥ó
+"------------------------------------------------------------
+"¥×¥é¥°¥¤¥óÀßÄê¤òÈ¿±Ç¤¹¤ë¤¿¤á¤Ë¥Õ¥¡¥¤¥ë¥¿¥¤¥×¤ò°ìÃ¶OFF
  if exists("g:did_load_filetypes")
-     filetype off          "ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒ—ã®è‡ªå‹•æ¤œå‡ºã‚’OFF
-     filetype plugin off   "ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒ—åˆ¥ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®ãƒ­ãƒ¼ãƒ‰ã‚’OFF
-     filetype indent off   "ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒ—åˆ¥ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆè¨­å®šã®ãƒ­ãƒ¼ãƒ‰ã‚’OFF
+     filetype off          "¥Õ¥¡¥¤¥ë¥¿¥¤¥×¼«Æ°¸¡½Ğ¤òOFF
+     filetype plugin off   "¥Õ¥¡¥¤¥ë¥¿¥¤¥×ÊÌ¥×¥é¥°¥¤¥ó¤Î¥í¡¼¥É¤òOFF
+     filetype indent off   "¥Õ¥¡¥¤¥ë¥¿¥¤¥×ÊÌ¥¤¥ó¥Ç¥ó¥ÈÀßÄê¤Î¥í¡¼¥É¤òOFF
  endif
 
  set runtimepath+=~j-hori/.vim
- source $VIMRUNTIME/macros/matchit.vim
 
-"ãƒ—ãƒ©ã‚°ã‚¤ãƒ³è¨­å®šã‚’åæ˜ ã™ã‚‹ãŸã‚ã«ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒ—è¨­å®šã‚’ON
- filetype on          "ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒ—ã®è‡ªå‹•æ¤œå‡ºã‚’ON
- filetype plugin on   "ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒ—åˆ¥ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®ãƒ­ãƒ¼ãƒ‰ã‚’ON
- filetype indent on   "ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒ—åˆ¥ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆè¨­å®šã®ãƒ­ãƒ¼ãƒ‰ã‚’ON
+"¥×¥é¥°¥¤¥óÀßÄê¤òÈ¿±Ç¤¹¤ë¤¿¤á¤Ë¥Õ¥¡¥¤¥ë¥¿¥¤¥×ÀßÄê¤òON
+ filetype on
+ filetype plugin on
+ filetype indent on
  
-"-------------------------------------------------------------------------------
-" ã‚«ãƒ¼ã‚½ãƒ«ç§»å‹•
-"-------------------------------------------------------------------------------
-"ã‚«ãƒ¼ã‚½ãƒ«ã‚’è¡¨ç¤ºè¡Œã§ç§»å‹•ã™ã‚‹ã€‚è«–ç†è¡Œç§»å‹•ã¯[C-n],[C-p]
+"------------------------------------------------------------
+" ¥«¡¼¥½¥ë°ÜÆ°
+"------------------------------------------------------------
+"¥«¡¼¥½¥ë¤òÉ½¼¨¹Ô¤Ç°ÜÆ°¤¹¤ë¡£ÏÀÍı¹Ô°ÜÆ°¤Ï[C-n],[C-p]
  nnoremap h <Left>
  nnoremap j gj
  nnoremap k gk
@@ -220,7 +175,7 @@
  nnoremap <Down> gj
  nnoremap <Up> gk
  
-"æŒ¿å…¥ãƒ¢ãƒ¼ãƒ‰ã®ã‚«ãƒ¼ã‚½ãƒ«ç§»å‹•
+"ÁŞÆş¥â¡¼¥É¤Î¥«¡¼¥½¥ë°ÜÆ°
  inoremap <C-h> <Left>
  inoremap <C-j> <Down>
  inoremap <C-k> <Up>
@@ -228,37 +183,37 @@
  inoremap <C-a> <HOME>
  inoremap <C-e> <END>
  
-"å‰å›çµ‚äº†ã—ãŸã‚«ãƒ¼ã‚½ãƒ«è¡Œã«ç§»å‹•
- autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+"Á°²ó½ªÎ»¤·¤¿¥«¡¼¥½¥ë¹Ô¤Ë°ÜÆ°
+ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
-"ãƒ•ãƒªãƒ¼ã‚«ãƒ¼ã‚½ãƒ«è¨­å®š
- set virtualedit+=block    "ãƒ“ã‚¸ãƒ¥ã‚¢ãƒ«çŸ©å½¢é¸æŠãƒ¢ãƒ¼ãƒ‰æ™‚ã®ã¿
+"¥Õ¥ê¡¼¥«¡¼¥½¥ëÀßÄê
+ set virtualedit+=block    "¥Ó¥¸¥å¥¢¥ë¶ë·ÁÁªÂò¥â¡¼¥É»ş¤Î¤ß
  
-"æ‹¬å¼§ç­‰ã®å…¥åŠ›æ™‚ã«ã‚«ãƒ¼ã‚½ãƒ«ã‚’å†…å´ã¸ç§»å‹•
-"inoremap {} {}<LEFT>
-"inoremap [] []<LEFT>
-"inoremap () ()<LEFT>
-"inoremap "" ""<LEFT>
-"inoremap '' ''<LEFT>
-"inoremap <> <><LEFT>
-"inoremap // //<LEFT>
+"³ç¸ÌÅù¤ÎÆşÎÏ»ş¤Ë¥«¡¼¥½¥ë¤òÆâÂ¦¤Ø°ÜÆ°
+ inoremap {} {}<LEFT>
+ inoremap [] []<LEFT>
+ inoremap () ()<LEFT>
+ inoremap "" ""<LEFT>
+ inoremap '' ''<LEFT>
+ inoremap <> <><LEFT>
+ inoremap // //<LEFT>
  
-"-------------------------------------------------------------------------------
-" ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦/ã‚¿ãƒ–é–¢é€£
-"-------------------------------------------------------------------------------
-"ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚­ãƒ¼è¨­å®š
+"------------------------------------------------------------
+" ¥¦¥£¥ó¥É¥¦/¥¿¥Ö´ØÏ¢
+"------------------------------------------------------------
+"¥×¥ì¥Õ¥£¥¯¥¹¥­¡¼ÀßÄê
  nnoremap [WinTab] <Nop>
  nmap s [WinTab]
  
-"ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®åˆ†å‰²
+"¥¦¥£¥ó¥É¥¦¤ÎÊ¬³ä
  nnoremap [WinTab]s :<C-u>split<CR>
  nnoremap [WinTab]v :<C-u>vsplit<CR>
 
-"ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦åˆ†å‰²ã®è§£é™¤
+"¥¦¥£¥ó¥É¥¦Ê¬³ä¤Î²ò½ü
  nnoremap [WinTab]o <C-w>o
  nnoremap [WinTab]c <C-w>c
 
-"åˆ†å‰²ã—ãŸã‚¦ã‚£ãƒ³ãƒ‰ã‚¦é–“ã®ç§»å‹•
+"Ê¬³ä¤·¤¿¥¦¥£¥ó¥É¥¦´Ö¤Î°ÜÆ°
  nnoremap [WinTab]r <C-w>r
  nnoremap [WinTab]w <C-w>w
  nnoremap [WinTab]j <C-w>j
@@ -270,7 +225,7 @@
  nnoremap [WinTab]<RIGHT> <C-w>l
  nnoremap [WinTab]<LEFT>  <C-w>h
 
-"åˆ†å‰²ã—ãŸã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãã®ã‚‚ã®ã®ç§»å‹•
+"Ê¬³ä¤·¤¿¥¦¥£¥ó¥É¥¦¤½¤Î¤â¤Î¤Î°ÜÆ°
  nnoremap [WinTab]J <C-w>J
  nnoremap [WinTab]K <C-w>K
  nnoremap [WinTab]L <C-w>L
@@ -280,44 +235,42 @@
  nnoremap [WinTab]<S-RIGHT> <C-w>L
  nnoremap [WinTab]<S-LEFT>  <C-w>H
  
-"åˆ†å‰²ã—ãŸã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å¤§ãã•ã‚’å¤‰æ›´
- nnoremap [WinTab]O <C-w>_<C-w>\|
+"Ê¬³ä¤·¤¿¥¦¥£¥ó¥É¥¦¤ÎÂç¤­¤µ¤òÊÑ¹¹
+ nnoremap [WinTab]0 <C-w>_<C-w>\|
  nnoremap [WinTab]= <C-w>=
  nnoremap [WinTab]. <C-w>>
  nnoremap [WinTab], <C-w><
  nnoremap [WinTab]; <C-w>+
  nnoremap [WinTab]- <C-w>-
+
  map <kPlus>  <C-w>+
  map <kMinus> <C-w>-
 
-"ã‚¿ãƒ–ã®è¿½åŠ 
+"¥¿¥Ö¤ÎÄÉ²Ã
  nnoremap [WinTab]t :<C-u>tabnew<CR>
-"ã‚¿ãƒ–ã®ç§»å‹•
+"¥¿¥Ö¤Î°ÜÆ°
  nnoremap [WinTab]n :<C-u>tabnext<CR>
  nnoremap [WinTab]p :<C-u>tabprevious<CR>
  
-"-------------------------------------------------------------------------------
-" ã‚«ãƒ¼ã‚½ãƒ«ä¸‹ã®å˜èªã«å¯¾ã™ã‚‹æ“ä½œ
-"-------------------------------------------------------------------------------
-"ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚­ãƒ¼è¨­å®š
+"------------------------------------------------------------
+" ¥«¡¼¥½¥ë²¼¤ÎÃ±¸ì¤ËÂĞ¤¹¤ëÁàºî
+"------------------------------------------------------------
+"¥×¥ì¥Õ¥£¥¯¥¹¥­¡¼ÀßÄê
  nnoremap [Space] <Nop>
  nmap <Space> [Space]
 
-"ã‚«ãƒ¼ã‚½ãƒ«ä¸‹ã®ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰ã‚’ãƒ˜ãƒ«ãƒ—ã§ã²ã
+"¥«¡¼¥½¥ë²¼¤Î¥­¡¼¥ï¡¼¥É¤ò¥Ø¥ë¥×¤Ç¤Ò¤¯
  nnoremap [Space]i :<C-u>help <C-r><C-w><CR>
-
-"ã‚«ãƒ¼ã‚½ãƒ«ä¸‹ã®å˜èªã‚’vimgrepã™ã‚‹(ã‚«ãƒ¬ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡)
+"¥«¡¼¥½¥ë²¼¤ÎÃ±¸ì¤òvimgrep¤¹¤ë
  nnoremap [Space]g :<C-u>vimgrep /<C-r><C-w>/j % \|cw
-
-"ã‚«ãƒ¼ã‚½ãƒ«ä¸‹ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã(åŒã˜ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã§)
+"¥«¡¼¥½¥ë²¼¤Î¥Õ¥¡¥¤¥ë¤ò³«¤¯(Æ±¤¸¥¦¥£¥ó¥É¥¦¤Ç)
  nnoremap [Space]e gf
-
-"ã‚«ãƒ¼ã‚½ãƒ«ä¸‹ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã(æ–°è¦ã‚¿ãƒ–ã§)
+"¥«¡¼¥½¥ë²¼¤Î¥Õ¥¡¥¤¥ë¤ò³«¤¯(¿·µ¬¥¿¥Ö¤Ç)
  nnoremap [Space]n <C-w>gf
 
-"ã‚«ãƒ¼ã‚½ãƒ«ä¸‹ã®ãƒ•ã‚¡ã‚¤ãƒ«ã®å­˜åœ¨ã‚’ãƒã‚§ãƒƒã‚¯
+"¥«¡¼¥½¥ë²¼¤Î¥Õ¥¡¥¤¥ë¤ÎÂ¸ºß¤ò¥Á¥§¥Ã¥¯
  function! g:check(str)
-     let chk=getftype(a:str)
+     let chk= getftype(a:str)
      if chk != ""
          echohl MoreMsg
          echo "### FOUND ### : "a:str
@@ -328,33 +281,60 @@
          echohl None
      endif
  endfunction
-"nnoremap [Space]c BvEy :call g:check("<C-r>"")<CR>
- nnoremap [Space]j :set iskeyword+=/<CR> bvey :set iskeyword-=/<CR> :call g:check("<C-r>"")<CR>
+ nnoremap [Space]j BvEy :call g:check("<C-r>"")<CR>
 
-"-------------------------------------------------------------------------------
-" ãƒˆã‚°ãƒ«
-"-------------------------------------------------------------------------------
-"ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚­ãƒ¼è¨­å®š
+"------------------------------------------------------------
+" ¥È¥°¥ë
+"------------------------------------------------------------
+"¥×¥ì¥Õ¥£¥¯¥¹¥­¡¼ÀßÄê
  nnoremap [Toggle] <Nop>
  nmap <Space>t [Toggle]
 
-"è¡Œç•ªå·è¡¨ç¤ºã®ãƒˆã‚°ãƒ«
+"¹ÔÈÖ¹æÉ½¼¨¤Î¥È¥°¥ë
  nnoremap [Toggle]n :<C-u>set number!<CR>
-
-"ä¸å¯è¦–æ–‡å­—è¡¨ç¤ºã®ãƒˆã‚°ãƒ«
- nnoremap [Toggle]L :<C-u>set list!<CR>
-
-"æ¤œç´¢æ™‚ã®å¤§æ–‡å­—/å°æ–‡å­—åŒºåˆ¥ã®ãƒˆã‚°ãƒ«
+"ÉÔ²Ä»ëÊ¸»úÉ½¼¨¤Î¥È¥°¥ë
+ nnoremap [Toggle]l :<C-u>set list!<CR>
+"¸¡º÷»ş¤ÎÂçÊ¸»ú/¾®Ê¸»ú¶èÊÌ¤Î¥È¥°¥ë
  nnoremap [Toggle]i :<C-u>set ignorecase!<CR>
-
-"æœ€å¾Œã¾ã§æ¤œç´¢ã—ãŸã‚‰å…ˆé ­ã¸æˆ»ã‚‹/æˆ»ã‚‰ãªã„ã®ãƒˆã‚°ãƒ«
- nnoremap [Toggle]s :<C-u>set wrapscan!<CR>
-
-"è¡Œã®æŠ˜ã‚Šè¿”ã—è¡¨ç¤ºã®ãƒˆã‚°ãƒ«
+"¹Ô¤ÎÀŞ¤êÊÖ¤·É½¼¨¤Î¥È¥°¥ë
  nnoremap [Toggle]w :<C-u>set wrap!<CR>
-
-"ã‚«ãƒ¼ã‚½ãƒ«è¡Œå¼·èª¿è¡¨ç¤ºã®ãƒˆã‚°ãƒ«
- nnoremap [Toggle]l :<C-u>set cursorline!<CR>
  
-"ãƒšãƒ¼ã‚¹ãƒˆãƒ¢ãƒ¼ãƒ‰ã®ãƒˆã‚°ãƒ«(æŒ¿å…¥ãƒ¢ãƒ¼ãƒ‰)
+"¥Ú¡¼¥¹¥È¥â¡¼¥É¤Î¥È¥°¥ë(ÁŞÆş¥â¡¼¥É)
  set pastetoggle=<F9>
+
+
+"ADD
+if &compatible
+  set nocompatible
+endif
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+
+call dein#begin(expand('~/.vim/dein'))
+
+call dein#add('Shougo/dein.vim')
+"call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/neomru.vim')
+"call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/unite.vim')
+call dein#add('w0ng/vim-hybrid')
+call dein#add('itchyny/lightline.vim')
+call dein#add('scrooloose/nerdtree')
+
+call dein#end()
+if dein#check_install()
+    call dein#install()
+endif
+
+":call dein#install()   "install
+":Unite dein   "check plugin
+
+filetype plugin indent on
+set t_Co=256
+syntax on
+set background=dark
+colorscheme hybrid
+let g:lightline = { 'colorscheme': 'wombat', }
+set laststatus=2
+set cursorline
+set number
+
