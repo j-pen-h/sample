@@ -1,3 +1,4 @@
+### Function ###
 def set_display_grid_0p011um():
     Lv.ViewAttr.setAttrs({
         "grid:display-xy-separation":False,
@@ -38,6 +39,7 @@ def set_display_grid_0p066um():
         })
     Lv.redrawView()
 
+### Assign key ###
 Lv.assignKey("Shift+F1", set_display_grid_0p011um, "global")
 Lv.assignKey("Shift+F2", set_display_grid_0p022um, "global")
 Lv.assignKey("Shift+F3", set_display_grid_0p033um, "global")
