@@ -1,16 +1,9 @@
 import re
-
 ### Set ###
 userhome_dir = Lv.app.getHomeDir()
 private_dir = Lv.app.getPrefDir()
 
-### Function / Assign key ###
-## Source startup script ##
-def source_startup():
-    print '#info# Source "%s/startup.py"' % private_dir
-    Lv.execScript(private_dir + "/startup.py")
-Lv.assignKey("F5", source_startup)
-
+### Function/Assign key ###
 ## Select Tool ##
 def selectTool_measure():
     Lv.selectTool("measure", subtool_name="edge-vertex")
@@ -49,3 +42,10 @@ if matchOB:
     elif matchOB.group(1) == "BBB":
         Lv.execScript(private_dir + "/script/toggle_layer_BBB.py")
         print '#info# Source "%s/script/toggle_layer_BBB.py"' % private_dir
+
+### Source startup script ###
+def source_startup():
+    print '#info# Source "%s/startup.py"' % private_dir
+    Lv.execScript(private_dir + "/startup.py")
+Lv.assignKey("F5", source_startup)
+
